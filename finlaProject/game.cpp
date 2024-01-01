@@ -102,31 +102,31 @@ void GameRunning() {
 		}
 
 		if (((ball_x + r >= rect2_x1)
-			&& (ball_y + r >= h - rect_h)
-			&& (ball_x - r <= rect2_x2))//碰到下方块
-			|| ((ball_x + r >= rect1_x1)
-				&& (ball_y - r <= rect_h)
-				&& (ball_x - r <= rect1_x2))//碰到上方块
-			|| (ball_y + r >= h - 10)//碰到底部
-			)
-		{
-			Sleep(100);//给个慢速回放，看看怎么死的
-			rect_vx = -3;//碰到就速度还原
-			break;
-		}
+                   && (ball_y + r >= rect2_y1)
+                   && (ball_x - r <= rect2_x2))//碰到下方块
+                   ((ball_x + r >= rect1_x1)
+                   && (ball_y - r <= rect1_y2)
+                   && (ball_x - r <= rect1_x2))//碰到上方块
+             	   (ball_y + r >= h - 10)//碰到底部
+                   )
+                {
+            Sleep(100);//给个慢速回放，看看怎么死的
+            rect_vx = -3;//碰到就速度还原
+            break;
+        }
 
-		if (ball_y - r <= 10)//如果碰到顶部，直接回到底部，分数为0
-		{
-			ball_vy += 100 * g;
-			ball_y += ball_vy;
-			break;
-		}
-		if (score > 0)
-		{
-			rect1_y2 += rect_vy;
-			rect2_y1 += rect_vy;
-		}
-
+        if (ball_y - r <= 10)//如果碰到顶部，直接回到底部，分数为0
+        {
+            ball_vy += 100 * g;
+            ball_y += ball_vy;
+            break;
+        }
+        if (score > 10)
+        {
+            rect1_y2 += rect_vy;
+            rect2_y1 += rect_vy;
+            if(rect1_y2<10|| rect2_y1>h-10)rect_vy*=-1;
+        }
 
 
 		cleardevice();
