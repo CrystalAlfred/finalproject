@@ -19,17 +19,6 @@ int main()
 		GameOver();
 	}
 
-	while (1) {
-		// 檢查是否按下 P 鍵，用於暫停和恢復
-		if (_kbhit() && _getch() == 'p') {
-			TogglePause();
-		}
-
-		if (!paused) {
-			// 遊戲運行
-			GameRunning();
-		}
-	}
 
 	return 0;
 }

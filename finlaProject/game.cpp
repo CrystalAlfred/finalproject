@@ -14,14 +14,9 @@ void StartScene() {
 	w = 600;
 	h = 400;
 	initgraph(w, h);//创建一个窗口
-
-<<<<<<< HEAD
-	settextstyle(40, 0, _T("宋体"));
-	outtextxy(w / 10, h / 2, _T("111按下任意鍵開始遊戲"));
-=======
 	settextstyle(40, 0, _T("Arial"));
 	outtextxy(w / 10, h / 2, _T("Press any key to start the game"));
->>>>>>> origin/hsc
+
 
 	_getch(); // 等待用戶按下任意鍵
 	cleardevice(); // 清除畫面
@@ -68,6 +63,7 @@ void GameRunning() {
 	rect2_y2 = h;//下方块贴地
 
 	//暫停
+	/*
 	while (1) {
 		if (!_kbhit()) {
 			// 檢查是否按下 P 鍵，用於暫停和恢復
@@ -105,15 +101,12 @@ void GameRunning() {
 		}
 
 		Sleep(10);
-	}
+	}*/
 
 	//速度
 	rect_vx = -2.5;
-<<<<<<< HEAD
-	rect_vy = -1;
-=======
 	rect_vy = -2;
->>>>>>> origin/hsc
+
 	score = 0;//分數歸零
 
 	while (1)
@@ -125,6 +118,19 @@ void GameRunning() {
 			if (input == ' ')
 			{
 				ball_vy = -8;
+			}
+			if (input == 'p') {
+				while (1) {
+					if (_kbhit())
+					{
+						char input = _getch();
+						if (input == 'p')
+						{
+							ball_vy = -8;
+							break;
+						}
+					}
+				}
 			}
 		}
 
@@ -160,7 +166,6 @@ void GameRunning() {
 		}
 
 		if (((ball_x + r >= rect2_x1)
-<<<<<<< HEAD
 			&& (ball_y + r >= rect2_y1)
 			&& (ball_x - r <= rect2_x2))//碰到下方块
 			|| ((ball_x + r >= rect1_x1)
@@ -186,20 +191,7 @@ void GameRunning() {
 			rect2_y1 += rect_vy;
 			if(rect1_y2<10|| rect2_y1>h-10)rect_vy*=-1;
 		}
-=======
-                   && (ball_y + r >= rect2_y1)
-                   && (ball_x - r <= rect2_x2))//碰到下方块
-                   ((ball_x + r >= rect1_x1)
-                   && (ball_y - r <= rect1_y2)
-                   && (ball_x - r <= rect1_x2))//碰到上方块
-             	   (ball_y + r >= h - 10)//碰到底部
-                   )
-                {
-            Sleep(100);//给个慢速回放，看看怎么死的
-            rect_vx = -3;//碰到就速度还原
-            break;
-        }
->>>>>>> origin/allan
+
 
         if (ball_y - r <= 10)//如果碰到顶部，直接回到底部，分数为0
         {
