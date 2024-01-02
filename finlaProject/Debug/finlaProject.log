@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  game.cpp
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(15): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(18): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
@@ -17,3 +18,7 @@ c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(171): warning C4244: '
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(173): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(175): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
   finlaProject.vcxproj -> C:\Users\b9310\Desktop\finalproject\Debug\finlaProject.exe
+=======
+﻿  finlaProject.cpp
+  finlaProject.vcxproj -> C:\Users\User\Desktop\finalproject\Debug\finlaProject.exe
+>>>>>>> origin/hsc

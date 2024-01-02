@@ -7,4 +7,4 @@ void GameOver();
 void ReadHistoryScore();
 void CkeckAndUpdateHistoryScore();
 int compare(const void *a, const void *b);
-
+void TogglePause();
