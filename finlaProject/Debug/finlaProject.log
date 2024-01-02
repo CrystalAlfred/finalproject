@@ -1,21 +1,19 @@
-﻿  finlaProject.cpp
-  game.cpp
+﻿  game.cpp
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(16): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(18): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(44): warning C4305: '=': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(45): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(117): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
 c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(123): warning C4305: '-=': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(175): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(179): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(180): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(183): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(184): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(200): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(202): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(205): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(207): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(209): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(211): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-  正在產生程式碼...
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(162): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(166): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(167): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(170): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(171): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(187): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(189): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(192): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(194): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(196): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\b9310\desktop\finalproject\finlaproject\game.cpp(198): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
   finlaProject.vcxproj -> C:\Users\b9310\Desktop\finalproject\Debug\finlaProject.exe

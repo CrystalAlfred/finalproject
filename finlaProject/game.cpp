@@ -83,7 +83,7 @@ void GameRunning() {
 					if (_kbhit())
 					{
 						char input = _getch();
-						if (input == 'p')
+						if (input == 'p'||input=='P')
 						{
 							ball_vy = -8;
 							break;
@@ -138,19 +138,6 @@ void GameRunning() {
 			break;
 		}
 
-		if (ball_y - r <= 10)//如果碰到顶部，直接回到底部，分数为0
-		{
-			ball_vy += 100 * g;
-			ball_y += ball_vy;
-			break;
-		}
-		if (score > 10)
-		{
-			rect1_y2 += rect_vy;
-			rect2_y1 += rect_vy;
-			if(rect1_y2<10|| rect2_y1>h-10)rect_vy*=-1;
-		}
-
 
         if (ball_y - r <= 10)//如果碰到顶部，直接回到底部，分数为0
         {
@@ -158,7 +145,7 @@ void GameRunning() {
             ball_y += ball_vy;
             break;
         }
-        if (score > 10)
+        if (score > 5)
         {
             rect1_y2 += rect_vy;
             rect2_y1 += rect_vy;
