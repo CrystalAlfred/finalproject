@@ -6,6 +6,7 @@
 
 int score = 0;//得分
 int historyscore[3] = { 0 };
+int paused = 0;
 
 
 void StartScene() {
@@ -14,11 +15,19 @@ void StartScene() {
 	h = 400;
 	initgraph(w, h);//创建一个窗口
 
-	settextstyle(40, 0, _T("宋体"));
-	outtextxy(w / 10, h / 2, _T("按下任意鍵開始遊戲"));
+	settextstyle(40, 0, _T("Arial"));
+	outtextxy(w / 10, h / 2, _T("Press any key to start the game"));
 
 	_getch(); // 等待用戶按下任意鍵
 	cleardevice(); // 清除畫面
+}
+
+void TogglePause() {
+	paused = !paused;
+	if (paused) {
+		settextstyle(20, 0, _T("Arial"));
+		outtextxy(50, 50, _T("遊戲已暫停，按 'P' 鍵繼續..."));
+	}
 }
 
 void GameRunning() {
@@ -53,9 +62,49 @@ void GameRunning() {
 	rect2_x2 = rect2_x1 + 30;
 	rect2_y2 = h;//下方块贴地
 
+	//暫停
+	while (1) {
+		if (!_kbhit()) {
+			// 檢查是否按下 P 鍵，用於暫停和恢復
+			if (_kbhit() && _getch() == 'p') {
+				TogglePause();
+			}
+		}
+
+		if (!paused) {
+			// 遊戲運行
+			// ...（之前的遊戲邏輯碼）
+		}
+
+		cleardevice();
+
+		// 繪制小球
+		setfillcolor(GREEN);
+		fillcircle(ball_x, ball_y - 10, r);
+
+		// 繪制方塊
+		setfillcolor(BROWN);
+		fillrectangle(rect1_x1, rect1_y1, rect1_x2, rect1_y2);
+		fillrectangle(rect2_x1, rect2_y1, rect2_x2, rect2_y2);
+
+		// 繪制分數
+		TCHAR s[20];
+		_stprintf(s, _T("%d"), score);
+		settextstyle(40, 0, _T("Arial"));
+		outtextxy(50, 30, s);
+
+		// 如果遊戲暫停，顯示暫停提示
+		if (paused) {
+			settextstyle(20, 0, _T("Arial"));
+			outtextxy(50, 50, _T("遊戲已暫停，按 'P' 鍵繼續..."));
+		}
+
+		Sleep(10);
+	}
+
 	//速度
 	rect_vx = -2.5;
-	rect_vy = -10;
+	rect_vy = -2;
 	score = 0;//分數歸零
 
 	while (1)
@@ -147,7 +196,7 @@ void GameRunning() {
 		//打印分数
 		TCHAR s[20];
 		_stprintf(s, _T("%d"), score);
-		settextstyle(40, 0, _T("宋体"));
+		settextstyle(40, 0, _T("Arial"));
 		outtextxy(50, 30, s);
 		Sleep(10);
 	}
@@ -159,7 +208,7 @@ void GameOver() {
 	w = 600;
 	h = 400;
 	initgraph(w, h);//创建一个窗口
-	settextstyle(20, 0, _T("宋体"));
+	settextstyle(20, 0, _T("Arial"));
 	outtextxy(w / 10, h / 4 - 20, _T("歷史成績"));
 	TCHAR text[50];
 	_stprintf(text, _T("#1:%d"), historyscore[2]);
@@ -169,7 +218,7 @@ void GameOver() {
 	_stprintf(text, _T("#3:%d"), historyscore[0]);
 	outtextxy(w / 10, h / 4 + 40, text);
 
-	outtextxy(w / 10, h / 20, _T("按下任意鍵繼續"));
+	outtextxy(w / 10, h / 20, _T("Press any key to start the game"));
 	_getch(); // 等待用戶按下任意鍵
 	cleardevice(); // 清除畫面
 }
@@ -192,7 +241,6 @@ void ReadHistoryScore() {
 
 	fclose(savefile);
 }
-
 
 void CkeckAndUpdateHistoryScore() {
 
@@ -217,6 +265,7 @@ void CkeckAndUpdateHistoryScore() {
 
 	fclose(savefile);
 }
+
 int compare(const void *a, const void *b) {
 	return (*(int*)a - *(int*)b);
 }
