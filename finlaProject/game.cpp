@@ -15,7 +15,7 @@ void StartScene() {
 	initgraph(w, h);//创建一个窗口
 
 	settextstyle(40, 0, _T("宋体"));
-	outtextxy(w / 10, h / 2, _T("按下任意鍵開始遊戲"));
+	outtextxy(w / 10, h / 2, _T("111按下任意鍵開始遊戲"));
 
 	_getch(); // 等待用戶按下任意鍵
 	cleardevice(); // 清除畫面
@@ -55,7 +55,7 @@ void GameRunning() {
 
 	//速度
 	rect_vx = -2.5;
-	rect_vy = -10;
+	rect_vy = -1;
 	score = 0;//分數歸零
 
 	while (1)
@@ -102,10 +102,10 @@ void GameRunning() {
 		}
 
 		if (((ball_x + r >= rect2_x1)
-			&& (ball_y + r >= h - rect_h)
+			&& (ball_y + r >= rect2_y1)
 			&& (ball_x - r <= rect2_x2))//碰到下方块
 			|| ((ball_x + r >= rect1_x1)
-				&& (ball_y - r <= rect_h)
+				&& (ball_y - r <= rect1_y2)
 				&& (ball_x - r <= rect1_x2))//碰到上方块
 			|| (ball_y + r >= h - 10)//碰到底部
 			)
@@ -121,12 +121,15 @@ void GameRunning() {
 			ball_y += ball_vy;
 			break;
 		}
-		if (score > 0)
+		if (score > 10)
 		{
 			rect1_y2 += rect_vy;
 			rect2_y1 += rect_vy;
+			if(rect1_y2<10|| rect2_y1>h-10)rect_vy*=-1;
 		}
 
+
+		cleardevice();
 
 
 		cleardevice();
